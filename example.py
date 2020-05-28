@@ -12,7 +12,7 @@ kwargs = {
     'method': 'KDTree',
     'axis': 'variance',
     'BFM': 'np',
-    'output': 'return',
+    'output': 'print',
     'timeit': 'False'
 }
 
