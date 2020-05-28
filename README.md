@@ -19,7 +19,7 @@ This NNA_Challenge implementation is written in `Python 3.8`, which by default s
 ```
 NNA_Challenge <input.txt> <radius> **kwargs
 ```
-Where <input.txt> is the filepath to a .txt file of the following format:
+Where `<input.txt>` is the filepath to a .txt file of the following format:
 
 ```
 #1 (0, 0, 0)
@@ -31,7 +31,7 @@ Where <input.txt> is the filepath to a .txt file of the following format:
 
 With nodes #1 -> #N being a tuple of x-dimensional points existing in an arbitrary domain space,
 
-Where <radius> is a float64 value to search for over the design space,
+Where `<radius>` is a float64 value to search for over the design space,
 
 and where **kwargs are subsequent keyword arguments which can be passed as `key=value`. See below for details.
 
