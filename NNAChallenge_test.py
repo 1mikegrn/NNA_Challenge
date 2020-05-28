@@ -3,7 +3,7 @@ import NNA_challenge
 
 def main():
 
-    radius = 1.0
+    radius = 3000000
 
     kwargs = {
         'method': 'KDTree',
