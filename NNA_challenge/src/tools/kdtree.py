@@ -1,6 +1,8 @@
 import pprint
 import numpy as np
 import pandas as pd
+import NNA_challenge
+
 
 class LeafyKDTree():
     '''KDTree where data is stored in leaves of the tree. Sub branches 
@@ -110,18 +112,13 @@ def strip_tree(tree):
                 res += strip_tree(tree[key])
         return res
 
-def sq_dist(p0, p1):
-    '''calculate the square distance between two n_dim points as sum of 
-    squares'''
-    return sum([(x[0]-x[1])**2 for x in zip(p0, p1)])
-
 def calculate(flat_tree, point, radius):
     '''determine which points in flat tree are within radius, append results
     which pass check to list and return list when done'''
 
     res = []
     for item in flat_tree:
-        d = sq_dist(point[1], item[1])
+        d = NNA_challenge.src.tools.sq_dist.sq_dist(point[1], item[1])
         if (d <= radius**2) and (d > 0):
             res.append(item[0])
 

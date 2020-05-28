@@ -25,11 +25,8 @@ data = input_class.parse_constraints()
 t1 = time.time()
 tree = NNA_challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs).query_radius(radius)
 t2 = time.time()
-
-print(t2-t1)
-
-# brute = NNA_challenge.src.tools.brute.BruteForce(data).query_radius(radius, kwargs['BFM'])
-# t3 = time.time()
-
+brute = NNA_challenge.src.tools.brute.BruteForce(data, **kwargs).query_radius(radius)
+t3 = time.time()
+print(brute)
 # NNA_challenge.src.tools.output.output(tree, **kwargs)
 # NNA_challenge.src.tools.output.output(brute, **kwargs)

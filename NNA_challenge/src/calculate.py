@@ -29,10 +29,10 @@ def calculate(input_file, radius, **kwargs):
     elif kwargs['method'] == 'BFM':        
 
         BFM_object = NNA_challenge.src.tools.brute.BruteForce(
-            data
+            data, **kwargs
         )
 
-        result = BFM_object.query_radius(radius, method=kwargs['BFM'])
+        result = BFM_object.query_radius(radius)
         return result
 
 

@@ -44,7 +44,7 @@ The following default kwargs:
         'method': 'KDTree',         # ['KDTree', 'BFM']
         'axis': 'variance',         # ['variance', 'uniform']
         'BFM': 'np',                # ['np', 'py']
-        'output': 'print',          # ['print', 'path/to/dir']
+        'output': 'print',          # ['print', 'return', 'path/to/dir']
     }
 ```
 

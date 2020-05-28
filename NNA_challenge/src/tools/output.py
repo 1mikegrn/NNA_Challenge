@@ -19,6 +19,9 @@ def output(results, **kwargs):
         for line in lines:
             print(line)
 
+    elif kwargs['output'] == 'return':
+        return lines
+        
     else:
         try:
             with open(path.join(kwargs['output'], 'NNA_results.txt'), 'w') as w:
