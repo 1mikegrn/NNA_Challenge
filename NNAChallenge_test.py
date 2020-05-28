@@ -1,5 +1,5 @@
 from os import path
-import NNA_challenge
+import NNA_Challenge
 
 def main():
 
@@ -17,14 +17,14 @@ def main():
 
     input_file = path.join(here, 'test_input.txt')
 
-    input_class = NNA_challenge.src.parse_input.ParseInput(input_file)
+    input_class = NNA_Challenge.src.parse_input.ParseInput(input_file)
     data = input_class.parse_constraints()
 
-    tree = NNA_challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs).query_radius(radius)   
-    brute = NNA_challenge.src.tools.brute.BruteForce(data, **kwargs).query_radius(radius)
+    tree = NNA_Challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs).query_radius(radius)   
+    brute = NNA_Challenge.src.tools.brute.BruteForce(data, **kwargs).query_radius(radius)
 
-    tree = NNA_challenge.src.tools.output.output(tree, **kwargs)
-    brute = NNA_challenge.src.tools.output.output(brute, **kwargs)
+    tree = NNA_Challenge.src.tools.output.output(tree, **kwargs)
+    brute = NNA_Challenge.src.tools.output.output(brute, **kwargs)
 
     return tree, brute
 
