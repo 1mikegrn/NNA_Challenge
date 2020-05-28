@@ -1,9 +1,9 @@
-import NNA_challenge
+import NNA_Challenge
 
 def calculate(input_file, radius, **kwargs):
     '''Handles assertion errors, funnels inputs to their respected class objects
     for computation. Returns computation result.'''    
-    input_class = NNA_challenge.src.parse_input.ParseInput(input_file)
+    input_class = NNA_Challenge.src.parse_input.ParseInput(input_file)
     data = input_class.parse_constraints()
 
     valid_method_kwargs = ['KDTree', 'BFM']
@@ -21,14 +21,14 @@ def calculate(input_file, radius, **kwargs):
     )
 
     if kwargs['method'] == 'KDTree':
-        tree = NNA_challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs)
+        tree = NNA_Challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs)
         result = tree.query_radius(radius)
 
         return result
 
     elif kwargs['method'] == 'BFM':        
 
-        BFM_object = NNA_challenge.src.tools.brute.BruteForce(
+        BFM_object = NNA_Challenge.src.tools.brute.BruteForce(
             data, **kwargs
         )
 

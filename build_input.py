@@ -1,5 +1,4 @@
 from os import path
-import NNA_challenge as NNA
 import numpy as np
 
 def build(length, n_dim):

@@ -1,7 +1,7 @@
 import sys
 
 def reader():
-    '''CLI for NNA_challenge. Accepts initializer, input file, radius as 
+    '''CLI for NNA_Challenge. Accepts initializer, input file, radius as 
     a float64, and subsequent kwargs through Commmand Line. 
     If '?' is passed as the first argument, prints help menu and terminates.'''
 
@@ -11,7 +11,7 @@ def reader():
         sys.exit()
 
     assert len(sys.argv) >= 3, (
-        'Expected CLI input: NNA_challenge <input_file.txt> <radius> **kwargs'
+        'Expected CLI input: NNA_Challenge <input_file.txt> <radius> **kwargs'
     )
 
     if len(sys.argv) == 3:
@@ -53,9 +53,9 @@ def print_help():
 
     The NNA_Challenge program takes the following arguments:
 
-    NNA_challenge <input_file.txt> <radius> **kwargs
+    NNA_Challenge <input_file.txt> <radius> **kwargs
 
-        NNA_challenge is the initializer from the command prompt
+        NNA_Challenge is the initializer from the command prompt
 
         <input_file.txt> is the full path to the input file.
 

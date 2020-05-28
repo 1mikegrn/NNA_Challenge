@@ -1,7 +1,7 @@
 import pprint
 import numpy as np
 import pandas as pd
-import NNA_challenge
+import NNA_Challenge
 
 
 class LeafyKDTree():
@@ -118,7 +118,7 @@ def calculate(flat_tree, point, radius):
 
     res = []
     for item in flat_tree:
-        d = NNA_challenge.src.tools.sq_dist.sq_dist(point[1], item[1])
+        d = NNA_Challenge.src.tools.sq_dist.sq_dist(point[1], item[1])
         if (d <= radius**2) and (d > 0):
             res.append(item[0])
 

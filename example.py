@@ -1,5 +1,5 @@
 from os import path
-import NNA_challenge
+import NNA_Challenge
 import numpy as np
 import time
 import sys
@@ -12,21 +12,21 @@ kwargs = {
     'method': 'KDTree',
     'axis': 'variance',
     'BFM': 'np',
-    'output': 'print',
+    'output': 'return',
     'timeit': 'False'
 }
 
 input_file = path.join(here, 'test_input.txt')
 
-input_class = NNA_challenge.src.parse_input.ParseInput(input_file)
+input_class = NNA_Challenge.src.parse_input.ParseInput(input_file)
 
 data = input_class.parse_constraints()
 
 t1 = time.time()
-tree = NNA_challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs).query_radius(radius)
+tree = NNA_Challenge.src.tools.kdtree.LeafyKDTree(data, **kwargs).query_radius(radius)
 t2 = time.time()
-brute = NNA_challenge.src.tools.brute.BruteForce(data, **kwargs).query_radius(radius)
+brute = NNA_Challenge.src.tools.brute.BruteForce(data, **kwargs).query_radius(radius)
 t3 = time.time()
-print(brute)
-# NNA_challenge.src.tools.output.output(tree, **kwargs)
-# NNA_challenge.src.tools.output.output(brute, **kwargs)
+
+NNA_Challenge.src.tools.output.output(tree, **kwargs)
+NNA_Challenge.src.tools.output.output(brute, **kwargs)

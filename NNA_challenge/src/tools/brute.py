@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-import NNA_challenge
+import NNA_Challenge
 
 class BruteForce():
-    """Brute Force approach to solve NNA_challenge problem."""
+    """Brute Force approach to solve NNA_Challenge problem."""
     def __init__(self, points, **kwargs):
         self.labels = [x[0] for x in points]
         self.data = np.array([x[1] for x in points])
@@ -35,7 +35,7 @@ class BruteForce():
             res = dict()
             for i, r in enumerate(self.data):
                 for j, c in enumerate(self.data):
-                    d = NNA_challenge.src.tools.sq_dist.sq_dist(r, c)
+                    d = NNA_Challenge.src.tools.sq_dist.sq_dist(r, c)
                     if (d <= radius**2) and (d > 0):
                         try:
                             res[self.labels[i]].append(self.labels[j])

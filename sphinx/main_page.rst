@@ -25,8 +25,8 @@ to the main module library. Once installed, calling
 :code:`NNA_Challenge <input.txt> <radius> **kwargs` from the command prompt 
 will execute the calculation.
 
-Though not necessary, the CLI will accept string kwargs of the form key=value 
-for the following parameters:
+Though not necessary, the CLI will accept string kwargs of the form
+:code:`key=value` for the following parameters:
 
 ::
 

@@ -1,3 +1,3 @@
-from NNA_challenge import (
+from NNA_Challenge import (
     src
 )

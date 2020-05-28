@@ -38,10 +38,12 @@ setup(
     ],
 
     entry_points={
-        'console_scripts': ['NNA_Challenge=NNA_challenge.__main__:main']
+        'console_scripts': ['NNA_Challenge=NNA_Challenge.__main__:main']
     },
 
     project_urls={
+        'Repository': 'https://github.com/1mikegrn/NNA_Challenge',
+        'DocSite': 'https://1mikegrn.github.io/NNA_Challenge',
         'Personal Website': 'https://1mikegrn.github.io',
         'Google Scholar': 'https://scholar.google.com/citations?user=DxFljRYAAAAJ&hl=en'
     }

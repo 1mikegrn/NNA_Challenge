@@ -1,4 +1,4 @@
-from NNA_challenge.src.tools import (
+from NNA_Challenge.src.tools import (
     cmd_reader,
     kdtree,
     brute,
