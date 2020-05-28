@@ -174,6 +174,26 @@ via pip and git.</p>
 to the main module library. Once installed, calling
 <code class="code docutils literal notranslate"><span class="pre">NNA_Challenge</span> <span class="pre">&lt;input.txt&gt;</span> <span class="pre">&lt;radius&gt;</span> <span class="pre">**kwargs</span></code> from the command prompt
 will execute the calculation.</p>
+<p>Though not necessary, the CLI will accept string kwargs of the form key=value
+for the following parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>                      <span class="c1"># Options</span>
+    <span class="s1">&#39;method&#39;</span><span class="p">:</span> <span class="s1">&#39;KDTree&#39;</span><span class="p">,</span>         <span class="c1"># [&#39;KDTree&#39;, &#39;BFM&#39;]</span>
+    <span class="s1">&#39;axis&#39;</span><span class="p">:</span> <span class="s1">&#39;variance&#39;</span><span class="p">,</span>         <span class="c1"># [&#39;variance&#39;, &#39;uniform&#39;]</span>
+    <span class="s1">&#39;BFM&#39;</span><span class="p">:</span> <span class="s1">&#39;np&#39;</span><span class="p">,</span>                <span class="c1"># [&#39;np&#39;, &#39;py&#39;]</span>
+    <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;print&#39;</span><span class="p">,</span>          <span class="c1"># [&#39;print&#39;, &#39;return&#39;, &#39;path/to/dir&#39;]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The method controls the main algorithmic method, using either the <code class="code docutils literal notranslate"><span class="pre">KDTree</span></code>
+(default) method, or a <code class="code docutils literal notranslate"><span class="pre">BFM</span></code> brute-force approach. For the KDTree, the
+method for determining the splitting axis can be either using a variance
+approach, splitting the data-set along the axis of highest variance, or a
+uniform approach, splitting along axis [x0, x1, x2, …] sequentially and
+repeatedly. For the brute-force approach, the calculation can be executed using
+NumPy broadcasting or with a pure-Python approach. Finally the output of the
+program can be set as ‘print’ to print to console, ‘return’ to return the
+results as a list of strings, or a directory path in which to save a
+<code class="code docutils literal notranslate"><span class="pre">NNA_results.txt</span></code> file.</p>
 </div>
 <div class="section" id="library-structure">
 <h1>Library Structure<a class="headerlink" href="#library-structure" title="Permalink to this headline">¶</a></h1>
@@ -209,7 +229,45 @@ runs the calculation, and toggles the output protocol.</p>
 for computation. Returns computation result.</p>
 </dd></dl>
 
-<span class="target" id="module-NNA_challenge.src.parse_input"></span><span class="target" id="module-NNA_challenge.src.tools.__init__"></span><span class="target" id="module-NNA_challenge.src.tools.cmd_reader"></span><dl class="function">
+<span class="target" id="module-NNA_challenge.src.parse_input"></span><dl class="class">
+<dt id="NNA_challenge.src.parse_input.ParseInput">
+<em class="property">class </em><code class="sig-prename descclassname">NNA_challenge.src.parse_input.</code><code class="sig-name descname">ParseInput</code><span class="sig-paren">(</span><em class="sig-param">file_name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a class object of the parsed input file. Constraints are accessed
+by the object function ‘parse constraints’ which returns a tuple of 
+(id, [x0, x1, x2, …])</p>
+<dl class="method">
+<dt id="NNA_challenge.src.parse_input.ParseInput.get_ndim">
+<code class="sig-name descname">get_ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput.get_ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns dimensionality of the input points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="NNA_challenge.src.parse_input.ParseInput.get_npts">
+<code class="sig-name descname">get_npts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput.get_npts" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns number of points in input file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="NNA_challenge.src.parse_input.ParseInput.parse_to_df">
+<code class="sig-name descname">parse_to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput.parse_to_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates pandas DataFrame of n_dim, index=id</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="NNA_challenge.src.parse_input.parentheses_parse">
+<code class="sig-prename descclassname">NNA_challenge.src.parse_input.</code><code class="sig-name descname">parentheses_parse</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.parentheses_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>splits line into string parts in tuple(id, string(coords))</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="NNA_challenge.src.parse_input.string_fmt">
+<code class="sig-prename descclassname">NNA_challenge.src.parse_input.</code><code class="sig-name descname">string_fmt</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.string_fmt" title="Permalink to this definition">¶</a></dt>
+<dd><p>formats coordinates from string to list of coordinates</p>
+</dd></dl>
+
+<span class="target" id="module-NNA_challenge.src.tools.__init__"></span><span class="target" id="module-NNA_challenge.src.tools.cmd_reader"></span><dl class="function">
 <dt id="NNA_challenge.src.tools.cmd_reader.parse_kwargs">
 <code class="sig-prename descclassname">NNA_challenge.src.tools.cmd_reader.</code><code class="sig-name descname">parse_kwargs</code><span class="sig-paren">(</span><em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.cmd_reader.parse_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses extra kwargs, builds subsequent kwarg dictionary, 
@@ -221,7 +279,7 @@ overriding defaults if requested</p>
 <code class="sig-prename descclassname">NNA_challenge.src.tools.cmd_reader.</code><code class="sig-name descname">reader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.cmd_reader.reader" title="Permalink to this definition">¶</a></dt>
 <dd><p>CLI for NNA_challenge. Accepts initializer, input file, radius as 
 a float64, and subsequent kwargs through Commmand Line. 
-If ‘?’ is passed as the first (and only) argument, prints help menu.</p>
+If ‘?’ is passed as the first argument, prints help menu and terminates.</p>
 </dd></dl>
 
 <span class="target" id="module-NNA_challenge.src.tools.kdtree"></span><dl class="class">
@@ -274,13 +332,6 @@ kwargs[‘axis’] = ‘uniform’</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.tools.kdtree.sq_dist">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">sq_dist</code><span class="sig-paren">(</span><em class="sig-param">p0</em>, <em class="sig-param">p1</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.sq_dist" title="Permalink to this definition">¶</a></dt>
-<dd><p>calculate the square distance between two n_dim points as sum of 
-squares</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="NNA_challenge.src.tools.kdtree.strip_tree">
 <code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.strip_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>takes tree, which is a nested dictionary, 
@@ -289,11 +340,11 @@ and flattens the data structure into a list of (label, point) tuples</p>
 
 <span class="target" id="module-NNA_challenge.src.tools.brute"></span><dl class="class">
 <dt id="NNA_challenge.src.tools.brute.BruteForce">
-<em class="property">class </em><code class="sig-prename descclassname">NNA_challenge.src.tools.brute.</code><code class="sig-name descname">BruteForce</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.brute.BruteForce" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">NNA_challenge.src.tools.brute.</code><code class="sig-name descname">BruteForce</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.brute.BruteForce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Brute Force approach to solve NNA_challenge problem.</p>
 <dl class="method">
 <dt id="NNA_challenge.src.tools.brute.BruteForce.query_radius">
-<code class="sig-name descname">query_radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em>, <em class="sig-param">method</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.brute.BruteForce.query_radius" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query_radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.brute.BruteForce.query_radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses NumPy broadcasing to run calculation at a lower level for faster 
 run times if method=’np’ (by default). Pure Python option is available 
 if method=’py’.</p>

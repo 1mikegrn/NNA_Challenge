@@ -166,6 +166,26 @@ via pip and git.</p>
 to the main module library. Once installed, calling
 <code class="code docutils literal notranslate"><span class="pre">NNA_Challenge</span> <span class="pre">&lt;input.txt&gt;</span> <span class="pre">&lt;radius&gt;</span> <span class="pre">**kwargs</span></code> from the command prompt
 will execute the calculation.</p>
+<p>Though not necessary, the CLI will accept string kwargs of the form key=value
+for the following parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>                      <span class="c1"># Options</span>
+    <span class="s1">&#39;method&#39;</span><span class="p">:</span> <span class="s1">&#39;KDTree&#39;</span><span class="p">,</span>         <span class="c1"># [&#39;KDTree&#39;, &#39;BFM&#39;]</span>
+    <span class="s1">&#39;axis&#39;</span><span class="p">:</span> <span class="s1">&#39;variance&#39;</span><span class="p">,</span>         <span class="c1"># [&#39;variance&#39;, &#39;uniform&#39;]</span>
+    <span class="s1">&#39;BFM&#39;</span><span class="p">:</span> <span class="s1">&#39;np&#39;</span><span class="p">,</span>                <span class="c1"># [&#39;np&#39;, &#39;py&#39;]</span>
+    <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;print&#39;</span><span class="p">,</span>          <span class="c1"># [&#39;print&#39;, &#39;return&#39;, &#39;path/to/dir&#39;]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The method controls the main algorithmic method, using either the <code class="code docutils literal notranslate"><span class="pre">KDTree</span></code>
+(default) method, or a <code class="code docutils literal notranslate"><span class="pre">BFM</span></code> brute-force approach. For the KDTree, the
+method for determining the splitting axis can be either using a variance
+approach, splitting the data-set along the axis of highest variance, or a
+uniform approach, splitting along axis [x0, x1, x2, …] sequentially and
+repeatedly. For the brute-force approach, the calculation can be executed using
+NumPy broadcasting or with a pure-Python approach. Finally the output of the
+program can be set as ‘print’ to print to console, ‘return’ to return the
+results as a list of strings, or a directory path in which to save a
+<code class="code docutils literal notranslate"><span class="pre">NNA_results.txt</span></code> file.</p>
 </div>
 <div class="section" id="library-structure">
 <h1>Library Structure<a class="headerlink" href="#library-structure" title="Permalink to this headline">¶</a></h1>

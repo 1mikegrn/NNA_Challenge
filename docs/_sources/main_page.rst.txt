@@ -25,11 +25,28 @@ to the main module library. Once installed, calling
 :code:`NNA_Challenge <input.txt> <radius> **kwargs` from the command prompt 
 will execute the calculation.
 
-.. This library also has a colab jupyter notebook, from which calculations can be
-.. executed without any necessary local downloads.
+Though not necessary, the CLI will accept string kwargs of the form key=value 
+for the following parameters:
 
-.. .. image:: https://colab.research.google.com/assets/colab-badge.svg
-..    :target: https://colab.research.google.com/github/1mikegrn/HypercubeChallenge/blob/master/colab/HypercubeChallenge_notebook.ipynb
+::
+
+    kwargs = {                      # Options
+        'method': 'KDTree',         # ['KDTree', 'BFM']
+        'axis': 'variance',         # ['variance', 'uniform']
+        'BFM': 'np',                # ['np', 'py']
+        'output': 'print',          # ['print', 'return', 'path/to/dir']
+    }
+
+The method controls the main algorithmic method, using either the :code:`KDTree` 
+(default) method, or a :code:`BFM` brute-force approach. For the KDTree, the 
+method for determining the splitting axis can be either using a variance 
+approach, splitting the data-set along the axis of highest variance, or a 
+uniform approach, splitting along axis [x0, x1, x2, ...] sequentially and 
+repeatedly. For the brute-force approach, the calculation can be executed using
+NumPy broadcasting or with a pure-Python approach. Finally the output of the 
+program can be set as 'print' to print to console, 'return' to return the 
+results as a list of strings, or a directory path in which to save a 
+:code:`NNA_results.txt` file. 
 
 Library Structure
 =================

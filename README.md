@@ -7,9 +7,15 @@
 
 ---
 
-This module is the second of two challenge submissions to be provided on behalf of Michael Green, candidate for employment with Karagozian and Case. 
+This module is the second of two challenge submissions to be provided on behalf of Michael Green, candidate for employment with Karagozian and Case.
 
-This NNA_Challenge implementation is written in Python v3.8.3, which by default sets float values to double precision float64 objects. The module takes as input directly from the command line:
+The library can be installed with `pip`  and `git`:
+
+```
+pip install git+https://github.com/1mikegrn/NNA_Challenge
+```
+
+This NNA_Challenge implementation is written in `Python 3.8`, which by default sets float values to double precision float64 objects. The module takes as input directly from the command line:
 ```
 NNA_Challenge <input.txt> <radius> **kwargs
 ```
@@ -23,7 +29,7 @@ Where <input.txt> is the filepath to a .txt file of the following format:
 #N (0, 0, 1)
 ```
 
-WIth nodes #1 -> #N being a tuple of x-dimensional points existing in an arbitrary domain space,
+With nodes #1 -> #N being a tuple of x-dimensional points existing in an arbitrary domain space,
 
 Where <radius> is a float64 value to search for over the design space,
 
@@ -49,5 +55,5 @@ The following default kwargs:
     }
 ```
 
-Are amenable with the given options. `BFM` is ignored if method is `KDTree`. 
-`axis` ignored if method is `BFM`.
+Are amenable with the given options. See full explanation in the 
+`Getting Started` section of the DocSite.
