@@ -84,7 +84,7 @@
 <li><a class="reference internal" href="#">NNA_Challenge: A submission for the Nearest Neighbors Algorithm Challenge</a></li>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#library-structure">Library Structure</a></li>
-<li><a class="reference internal" href="#module-NNA_challenge.__init__">NNA_Challenge</a></li>
+<li><a class="reference internal" href="#module-NNA_Challenge.__init__">NNA_Challenge</a></li>
 <li><a class="reference internal" href="#about">About</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
@@ -213,110 +213,110 @@ results as a list of strings, or a directory path in which to save a
 </pre></div>
 </div>
 </div>
-<div class="section" id="module-NNA_challenge.__init__">
-<span id="nna-challenge"></span><h1>NNA_Challenge<a class="headerlink" href="#module-NNA_challenge.__init__" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-NNA_challenge.__main__"></span><dl class="function">
-<dt id="NNA_challenge.__main__.main">
-<code class="sig-prename descclassname">NNA_challenge.__main__.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.__main__.main" title="Permalink to this definition">¶</a></dt>
-<dd><p>Main entry point for NNA_challenge CLI input. Parses command line inputs, 
+<div class="section" id="module-NNA_Challenge.__init__">
+<span id="nna-challenge"></span><h1>NNA_Challenge<a class="headerlink" href="#module-NNA_Challenge.__init__" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-NNA_Challenge.__main__"></span><dl class="function">
+<dt id="NNA_Challenge.__main__.main">
+<code class="sig-prename descclassname">NNA_Challenge.__main__.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.__main__.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main entry point for NNA_Challenge CLI input. Parses command line inputs, 
 runs the calculation, and toggles the output protocol.</p>
 </dd></dl>
 
-<span class="target" id="module-NNA_challenge.src.__init__"></span><span class="target" id="module-NNA_challenge.src.calculate"></span><dl class="function">
-<dt id="NNA_challenge.src.calculate.calculate">
-<code class="sig-prename descclassname">NNA_challenge.src.calculate.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">input_file</em>, <em class="sig-param">radius</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.calculate.calculate" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-NNA_Challenge.src.__init__"></span><span class="target" id="module-NNA_Challenge.src.calculate"></span><dl class="function">
+<dt id="NNA_Challenge.src.calculate.calculate">
+<code class="sig-prename descclassname">NNA_Challenge.src.calculate.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">input_file</em>, <em class="sig-param">radius</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.calculate.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles assertion errors, funnels inputs to their respected class objects
 for computation. Returns computation result.</p>
 </dd></dl>
 
-<span class="target" id="module-NNA_challenge.src.parse_input"></span><dl class="class">
-<dt id="NNA_challenge.src.parse_input.ParseInput">
-<em class="property">class </em><code class="sig-prename descclassname">NNA_challenge.src.parse_input.</code><code class="sig-name descname">ParseInput</code><span class="sig-paren">(</span><em class="sig-param">file_name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-NNA_Challenge.src.parse_input"></span><dl class="class">
+<dt id="NNA_Challenge.src.parse_input.ParseInput">
+<em class="property">class </em><code class="sig-prename descclassname">NNA_Challenge.src.parse_input.</code><code class="sig-name descname">ParseInput</code><span class="sig-paren">(</span><em class="sig-param">file_name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.parse_input.ParseInput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a class object of the parsed input file. Constraints are accessed
 by the object function ‘parse constraints’ which returns a tuple of 
 (id, [x0, x1, x2, …])</p>
 <dl class="method">
-<dt id="NNA_challenge.src.parse_input.ParseInput.get_ndim">
-<code class="sig-name descname">get_ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput.get_ndim" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.parse_input.ParseInput.get_ndim">
+<code class="sig-name descname">get_ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.parse_input.ParseInput.get_ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns dimensionality of the input points</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="NNA_challenge.src.parse_input.ParseInput.get_npts">
-<code class="sig-name descname">get_npts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput.get_npts" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.parse_input.ParseInput.get_npts">
+<code class="sig-name descname">get_npts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.parse_input.ParseInput.get_npts" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns number of points in input file</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="NNA_challenge.src.parse_input.ParseInput.parse_to_df">
-<code class="sig-name descname">parse_to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.ParseInput.parse_to_df" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.parse_input.ParseInput.parse_to_df">
+<code class="sig-name descname">parse_to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.parse_input.ParseInput.parse_to_df" title="Permalink to this definition">¶</a></dt>
 <dd><p>generates pandas DataFrame of n_dim, index=id</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.parse_input.parentheses_parse">
-<code class="sig-prename descclassname">NNA_challenge.src.parse_input.</code><code class="sig-name descname">parentheses_parse</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.parentheses_parse" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.parse_input.parentheses_parse">
+<code class="sig-prename descclassname">NNA_Challenge.src.parse_input.</code><code class="sig-name descname">parentheses_parse</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.parse_input.parentheses_parse" title="Permalink to this definition">¶</a></dt>
 <dd><p>splits line into string parts in tuple(id, string(coords))</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.parse_input.string_fmt">
-<code class="sig-prename descclassname">NNA_challenge.src.parse_input.</code><code class="sig-name descname">string_fmt</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.parse_input.string_fmt" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.parse_input.string_fmt">
+<code class="sig-prename descclassname">NNA_Challenge.src.parse_input.</code><code class="sig-name descname">string_fmt</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.parse_input.string_fmt" title="Permalink to this definition">¶</a></dt>
 <dd><p>formats coordinates from string to list of coordinates</p>
 </dd></dl>
 
-<span class="target" id="module-NNA_challenge.src.tools.__init__"></span><span class="target" id="module-NNA_challenge.src.tools.cmd_reader"></span><dl class="function">
-<dt id="NNA_challenge.src.tools.cmd_reader.parse_kwargs">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.cmd_reader.</code><code class="sig-name descname">parse_kwargs</code><span class="sig-paren">(</span><em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.cmd_reader.parse_kwargs" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-NNA_Challenge.src.tools.__init__"></span><span class="target" id="module-NNA_Challenge.src.tools.cmd_reader"></span><dl class="function">
+<dt id="NNA_Challenge.src.tools.cmd_reader.parse_kwargs">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cmd_reader.</code><code class="sig-name descname">parse_kwargs</code><span class="sig-paren">(</span><em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cmd_reader.parse_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses extra kwargs, builds subsequent kwarg dictionary, 
 overriding defaults if requested</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.tools.cmd_reader.reader">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.cmd_reader.</code><code class="sig-name descname">reader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.cmd_reader.reader" title="Permalink to this definition">¶</a></dt>
-<dd><p>CLI for NNA_challenge. Accepts initializer, input file, radius as 
+<dt id="NNA_Challenge.src.tools.cmd_reader.reader">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cmd_reader.</code><code class="sig-name descname">reader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cmd_reader.reader" title="Permalink to this definition">¶</a></dt>
+<dd><p>CLI for NNA_Challenge. Accepts initializer, input file, radius as 
 a float64, and subsequent kwargs through Commmand Line. 
 If ‘?’ is passed as the first argument, prints help menu and terminates.</p>
 </dd></dl>
 
-<span class="target" id="module-NNA_challenge.src.tools.kdtree"></span><dl class="class">
-<dt id="NNA_challenge.src.tools.kdtree.LeafyKDTree">
-<em class="property">class </em><code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">LeafyKDTree</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.LeafyKDTree" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-NNA_Challenge.src.tools.kdtree"></span><dl class="class">
+<dt id="NNA_Challenge.src.tools.kdtree.LeafyKDTree">
+<em class="property">class </em><code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">LeafyKDTree</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.LeafyKDTree" title="Permalink to this definition">¶</a></dt>
 <dd><p>KDTree where data is stored in leaves of the tree. Sub branches 
 are generated purely as a function of the splitting axis.</p>
 <dl class="method">
-<dt id="NNA_challenge.src.tools.kdtree.LeafyKDTree.build_tree">
-<code class="sig-name descname">build_tree</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.LeafyKDTree.build_tree" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.LeafyKDTree.build_tree">
+<code class="sig-name descname">build_tree</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.LeafyKDTree.build_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>recursively build tree from data points. Returns nested dictionary</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="NNA_challenge.src.tools.kdtree.LeafyKDTree.print_tree">
-<code class="sig-name descname">print_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.LeafyKDTree.print_tree" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.LeafyKDTree.print_tree">
+<code class="sig-name descname">print_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.LeafyKDTree.print_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>pretty print tree</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="NNA_challenge.src.tools.kdtree.LeafyKDTree.query_radius">
-<code class="sig-name descname">query_radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.LeafyKDTree.query_radius" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.LeafyKDTree.query_radius">
+<code class="sig-name descname">query_radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.LeafyKDTree.query_radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>traverses KDTree w/r to each point, returns points within radius</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.tools.kdtree.calculate">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">flat_tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.calculate" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.calculate">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">flat_tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p>determine which points in flat tree are within radius, append results
 which pass check to list and return list when done</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.tools.kdtree.find_points">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">find_points</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.find_points" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.find_points">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">find_points</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.find_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>recursive function which traverses the tree; if the radial
 bounds around a point for a given axis are contained by a subtree, use that
 subtree. If tree bisects radial points, flatten remainder of tree and 
@@ -324,27 +324,27 @@ analyze via brute force</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.tools.kdtree.get_axis">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">get_axis</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">n_dim</em>, <em class="sig-param">depth</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.get_axis" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.get_axis">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">get_axis</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">n_dim</em>, <em class="sig-param">depth</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.get_axis" title="Permalink to this definition">¶</a></dt>
 <dd><p>picks splitting axis as the axis with the highest variance. This can be
 changed to iterate through dimensions sequentially through 
 kwargs[‘axis’] = ‘uniform’</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_challenge.src.tools.kdtree.strip_tree">
-<code class="sig-prename descclassname">NNA_challenge.src.tools.kdtree.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.kdtree.strip_tree" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.kdtree.strip_tree">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.strip_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>takes tree, which is a nested dictionary, 
 and flattens the data structure into a list of (label, point) tuples</p>
 </dd></dl>
 
-<span class="target" id="module-NNA_challenge.src.tools.brute"></span><dl class="class">
-<dt id="NNA_challenge.src.tools.brute.BruteForce">
-<em class="property">class </em><code class="sig-prename descclassname">NNA_challenge.src.tools.brute.</code><code class="sig-name descname">BruteForce</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.brute.BruteForce" title="Permalink to this definition">¶</a></dt>
-<dd><p>Brute Force approach to solve NNA_challenge problem.</p>
+<span class="target" id="module-NNA_Challenge.src.tools.brute"></span><dl class="class">
+<dt id="NNA_Challenge.src.tools.brute.BruteForce">
+<em class="property">class </em><code class="sig-prename descclassname">NNA_Challenge.src.tools.brute.</code><code class="sig-name descname">BruteForce</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.brute.BruteForce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brute Force approach to solve NNA_Challenge problem.</p>
 <dl class="method">
-<dt id="NNA_challenge.src.tools.brute.BruteForce.query_radius">
-<code class="sig-name descname">query_radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_challenge.src.tools.brute.BruteForce.query_radius" title="Permalink to this definition">¶</a></dt>
+<dt id="NNA_Challenge.src.tools.brute.BruteForce.query_radius">
+<code class="sig-name descname">query_radius</code><span class="sig-paren">(</span><em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.brute.BruteForce.query_radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses NumPy broadcasing to run calculation at a lower level for faster 
 run times if method=’np’ (by default). Pure Python option is available 
 if method=’py’.</p>

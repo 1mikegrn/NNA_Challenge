@@ -10,31 +10,31 @@ NNA_Challenge: A submission for the Nearest Neighbors Algorithm Challenge
 NNA_Challenge
 =============
 
-.. automodule:: NNA_challenge.__init__
+.. automodule:: NNA_Challenge.__init__
    :members:
 
-.. automodule:: NNA_challenge.__main__
+.. automodule:: NNA_Challenge.__main__
    :members:
 
-.. automodule:: NNA_challenge.src.__init__
+.. automodule:: NNA_Challenge.src.__init__
    :members:
 
-.. automodule:: NNA_challenge.src.calculate
+.. automodule:: NNA_Challenge.src.calculate
    :members:
 
-.. automodule:: NNA_challenge.src.parse_input
+.. automodule:: NNA_Challenge.src.parse_input
    :members:
 
-.. automodule:: NNA_challenge.src.tools.__init__
+.. automodule:: NNA_Challenge.src.tools.__init__
    :members:
 
-.. automodule:: NNA_challenge.src.tools.cmd_reader
+.. automodule:: NNA_Challenge.src.tools.cmd_reader
    :members:
 
-.. automodule:: NNA_challenge.src.tools.kdtree
+.. automodule:: NNA_Challenge.src.tools.kdtree
    :members:
 
-.. automodule:: NNA_challenge.src.tools.brute
+.. automodule:: NNA_Challenge.src.tools.brute
    :members:
 
 .. include:: /about.rst
