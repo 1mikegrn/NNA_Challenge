@@ -1,7 +1,10 @@
 from os import path
 
 def output(results, **kwargs):
-    '''Reformats data (mostly) in accordance to requested file format'''
+    '''Reformats data (mostly) in accordance to requested file format. Default
+    kwarg is to print to console, though if kwargs['output'] = /path/to/dir then
+    a text file is saved as comma, separated via: point id, neighbors=X, list()
+    with X being len(list())'''
 
     lines = []
     for i in range(1, len(results)+1):

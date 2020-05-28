@@ -2,7 +2,8 @@ import sys
 
 def reader():
     '''CLI for NNA_challenge. Accepts initializer, input file, radius as 
-    a float64, and subsequent kwargs. If '?' is passed, prints help menu.'''
+    a float64, and subsequent kwargs through Commmand Line. 
+    If '?' is passed as the first (and only) argument, prints help menu.'''
 
     if sys.argv[1] == '?':
         print_help()
@@ -63,7 +64,7 @@ def print_help():
         
     The default **kwargs values are:
 
-    kwargs = {
+    kwargs = {                      # Options
         'method': 'KDTree',         # ['KDTree', 'BFM']
         'axis': 'variance',         # ['variance', 'uniform']
         'BFM': 'np',                # ['np', 'py']

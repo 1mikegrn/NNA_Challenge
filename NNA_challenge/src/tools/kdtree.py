@@ -43,8 +43,10 @@ class LeafyKDTree():
 
 
 def get_axis(points, n_dim, depth, **kwargs):
-    '''picks splitting axis as the axis with the highest variance. if method
-    **kwarg passed this changes to iterate through dimensions sequentially'''
+    '''picks splitting axis as the axis with the highest variance. This can be
+    changed to iterate through dimensions sequentially through 
+    kwargs['axis'] = 'uniform'
+    '''
 
     if kwargs['method'] == 'uniform':
         return depth % n_dim
@@ -109,7 +111,8 @@ def strip_tree(tree):
         return res
 
 def sq_dist(p0, p1):
-    '''calculate distance between two n_dim points as sum of squares'''
+    '''calculate the square distance between two n_dim points as sum of 
+    squares'''
     return sum([(x[0]-x[1])**2 for x in zip(p0, p1)])
 
 def calculate(flat_tree, point, radius):
@@ -124,38 +127,17 @@ def calculate(flat_tree, point, radius):
 
     return res
 
-### old stuff ###
+# pandas implementation, takes longer to build data structure and broadcast
 
-# class LeafyKDTreeVar():
-#     def __init__(self, points):
-#         self.n_dim = len(points[0])
-#         self.points = points
-#         self.tree = self.build_tree(points)
+# def calculate(flat_tree, point, radius):
+#     '''determine which points in flat tree are within radius, append results
+#     which pass check to list and return list when done'''
 
-#     def build_tree(self, points, depth=0):
-#         
-#         n = len(points)
-#         if n > 1:
-#             axis = get_axis(points, self.n_dim)
-#             sorted_points = sorted(points, key=lambda point: point[1][axis])
-#             divisor = n // 2
-#             return {
-#                 'H': {'axis': axis, 'divisor': sorted_points[divisor][1][axis]},
-#                 'L': self.build_tree(sorted_points[:divisor], depth + 1),
-#                 'R': self.build_tree(sorted_points[divisor:], depth + 1)
-#             }
+#     flat_tree=pd.DataFrame(
+#         [x[1] for x in flat_tree], [x[0] for x in flat_tree]
+#     )
 
-#         else: return points
+#     flat_tree = np.sum((flat_tree - np.array(point[1]))**2, axis=1)
+#     res = list(flat_tree[(flat_tree <= radius**2) & (flat_tree > 0)].index)
 
-#     def print_tree(self):
-#         
-#         pp = pprint.PrettyPrinter(indent=2)
-#         pp.pprint(self.tree)
-
-#     def find_points(self, radius):
-#         
-#         res = dict()
-#         for point in self.points:
-#             res[point[0]] = query_radius(self.tree, point, radius)
-
-#         return res
+#     return res
