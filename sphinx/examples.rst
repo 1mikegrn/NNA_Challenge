@@ -34,3 +34,15 @@ A full list of options and keyword arguments is available in the user menu,
 which is accessed by passing the :code:`?` keyword as the first parameter.
 
 .. image:: /images/image_3.jpg
+
+Linux
++++++
+
+In Linux, installation using :code:`pip` and :code:`git` is the same as on
+Windows
+
+.. image:: /images/L3.png
+
+and the methods for interfacing with the module are consistent as well.
+
+.. image:: /images/L4.png
