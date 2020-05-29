@@ -37,6 +37,8 @@ NNA_Challenge
 .. automodule:: NNA_Challenge.src.tools.brute
    :members:
 
+.. include:: /examples.rst
+
 .. include:: /about.rst
 
 .. toctree::
