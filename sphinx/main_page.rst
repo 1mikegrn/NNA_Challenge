@@ -66,3 +66,6 @@ Library Structure
                 kdtree.py                   # kdtree class location
                 brute.py                    # brute-force approach module
                 output.py                   # file output module
+                cython/                     # cython module
+                    _calculate.pyx          # main cython implementation
+                    calculate.py            # fallback python implementation

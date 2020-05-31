@@ -1,5 +1,5 @@
 """
-Cython
+cython
 ------
 
 handles cython file importation in the case where Cython fails to compile. 
