@@ -41,7 +41,7 @@ def strip_tree(tree):
 def get_axis(points, n_dim, depth, method):
     '''picks splitting axis as the axis with the highest variance. This can be
     changed to iterate through dimensions sequentially through 
-    kwargs['axis'] = 'uniform'
+    method = 'uniform'
     '''
 
     if method == 'uniform':
