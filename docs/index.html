@@ -84,7 +84,10 @@
 <li><a class="reference internal" href="#">NNA_Challenge: A submission for the Nearest Neighbors Algorithm Challenge</a></li>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#library-structure">Library Structure</a></li>
-<li><a class="reference internal" href="#module-NNA_Challenge.__init__">NNA_Challenge</a></li>
+<li><a class="reference internal" href="#module-NNA_Challenge.__init__">NNA_Challenge</a><ul>
+<li><a class="reference internal" href="#cython">Cython</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 <li><a class="reference internal" href="#linux">Linux</a></li>
@@ -335,10 +338,12 @@ if method=’py’.</p>
 
 </dd></dl>
 
-<span class="target" id="module-NNA_Challenge.src.tools.cython.__init__"></span><p>### Cython</p>
+<span class="target" id="module-NNA_Challenge.src.tools.cython.__init__"></span><div class="section" id="cython">
+<h2>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h2>
 <p>handles cython file importation in the case where Cython fails to compile. 
 _calculate.pyx and calculate.py are functionally the same, though syntax may 
 differ due to optimizations.</p>
+</div>
 <span class="target" id="module-NNA_Challenge.src.tools.cython.calculate"></span><dl class="function">
 <dt id="NNA_Challenge.src.tools.cython.calculate.calculate">
 <code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.calculate" title="Permalink to this definition">¶</a></dt>

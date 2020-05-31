@@ -1,5 +1,6 @@
 """
-### Cython
+Cython
+------
 
 handles cython file importation in the case where Cython fails to compile. 
 _calculate.pyx and calculate.py are functionally the same, though syntax may 
