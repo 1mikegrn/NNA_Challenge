@@ -4,8 +4,7 @@ import pandas as pd
 import NNA_Challenge
 
 class Node:
-    """Node class for LeafyKDTree. Repr returns the axis and splitting value.
-    """
+    '''Node class for LeafyKDTree. Repr returns the axis and splitting value.'''
     def __init__(self, value, left=None, right=None):
         self.left = left
         self.data = value
@@ -15,6 +14,7 @@ class Node:
         return str(self.data)
 
     def branches(self):
+        '''returns tuple of (self.left, self.right) sub trees'''
         return self.left, self.right
         
 
@@ -65,7 +65,7 @@ def find_points(
     bounds around a point for a given axis are contained by a subtree, use that
     subtree. If tree bisects radial points, flatten remainder of tree and 
     analyze via brute force'''
-    
+
     # if we get to end of tree, then no points 
     # are within radius and return an empty list
     if isinstance(tree, Node) is False:
