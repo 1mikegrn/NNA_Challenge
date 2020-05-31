@@ -34,15 +34,11 @@ class BruteForce():
         elif self.kwargs['BFM'] == 'py':
             res = dict()
             for i, r in enumerate(self.data):
+                res[self.labels[i]] = []
                 for j, c in enumerate(self.data):
-                    d = NNA_Challenge.src.tools.sq_dist.sq_dist(r, c)
+                    d = NNA_Challenge.src.tools.cython.calculate.sq_dist(r, c)
                     if (d <= radius**2) and (d > 0):
-                        try:
-                            res[self.labels[i]].append(self.labels[j])
-                        except:
-                            res[self.labels[i]] = []
-                            res[self.labels[i]].append(self.labels[j])
-
+                        res[self.labels[i]].append(self.labels[j])
             return res
 
 

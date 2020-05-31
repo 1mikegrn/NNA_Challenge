@@ -17,7 +17,10 @@ class LeafyKDTree():
         '''recursively build tree from data points. Returns nested dictionary'''
         n = len(points)
         if n > 1:
-            axis = get_axis(points, self.n_dim, depth, **self.kwargs)
+            axis = NNA_Challenge.src.tools.cython.calculate.get_axis(
+                points, self.n_dim, depth, method=self.kwargs['method']
+            )
+
             sorted_points = sorted(points, key=lambda point: point[1][axis])
             divisor = n // 2
             tree = {
@@ -43,26 +46,6 @@ class LeafyKDTree():
 
         return res
 
-
-def get_axis(points, n_dim, depth, **kwargs):
-    '''picks splitting axis as the axis with the highest variance. This can be
-    changed to iterate through dimensions sequentially through 
-    kwargs['axis'] = 'uniform'
-    '''
-
-    if kwargs['method'] == 'uniform':
-        return depth % n_dim
-
-    else:
-        axis = (None, -1)
-        for i in range(n_dim):
-            variance = np.var([a[1][i] for a in points])
-            if variance > axis[1]:
-                axis = (i, variance)
-
-        return axis[0]
-
-
 def find_points(
         tree, point, radius, depth=0
     ):
@@ -86,7 +69,9 @@ def find_points(
     # if radial bound bisect splitting axis, 
     # flatten tree and use smaller set in brute force calculation
     elif condition_1 or condition_2:
-        return calculate(strip_tree(tree), point, radius)
+        return NNA_Challenge.src.tools.cython.calculate.calculate(
+            tree, point, radius
+        )
 
     # if both radial bounds are above splitting axis, use right branch
     else:
@@ -94,35 +79,7 @@ def find_points(
 
     # recursively apply function to traverse tree
     return find_points(next_branch, point, radius, depth=depth+1)
-
-def strip_tree(tree):
-    '''takes tree, which is a nested dictionary, 
-    and flattens the data structure into a list of (label, point) tuples'''
     
-    # leafy tree always ends in list, so return said list when encountered
-    if isinstance(tree, list) is True:
-        return tree
-
-    # recursively traverse tree grabbing all leaves 
-    # and appending them to results list
-    if isinstance(tree, dict) is True:
-        res = []
-        for key in tree.keys():
-            if key != 'H':
-                res += strip_tree(tree[key])
-        return res
-
-def calculate(flat_tree, point, radius):
-    '''determine which points in flat tree are within radius, append results
-    which pass check to list and return list when done'''
-
-    res = []
-    for item in flat_tree:
-        d = NNA_Challenge.src.tools.sq_dist.sq_dist(point[1], item[1])
-        if (d <= radius**2) and (d > 0):
-            res.append(item[0])
-
-    return res
 
 # pandas implementation, takes longer to build data structure and broadcast
 

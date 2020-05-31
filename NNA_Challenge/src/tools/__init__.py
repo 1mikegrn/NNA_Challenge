@@ -3,5 +3,5 @@ from NNA_Challenge.src.tools import (
     kdtree,
     brute,
     output,
-    sq_dist
+    cython
 )

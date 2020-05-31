@@ -313,34 +313,12 @@ are generated purely as a function of the splitting axis.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="NNA_Challenge.src.tools.kdtree.calculate">
-<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">flat_tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.calculate" title="Permalink to this definition">¶</a></dt>
-<dd><p>determine which points in flat tree are within radius, append results
-which pass check to list and return list when done</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="NNA_Challenge.src.tools.kdtree.find_points">
 <code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">find_points</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.find_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>recursive function which traverses the tree; if the radial
 bounds around a point for a given axis are contained by a subtree, use that
 subtree. If tree bisects radial points, flatten remainder of tree and 
 analyze via brute force</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="NNA_Challenge.src.tools.kdtree.get_axis">
-<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">get_axis</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">n_dim</em>, <em class="sig-param">depth</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.get_axis" title="Permalink to this definition">¶</a></dt>
-<dd><p>picks splitting axis as the axis with the highest variance. This can be
-changed to iterate through dimensions sequentially through 
-kwargs[‘axis’] = ‘uniform’</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="NNA_Challenge.src.tools.kdtree.strip_tree">
-<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.strip_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>takes tree, which is a nested dictionary, 
-and flattens the data structure into a list of (label, point) tuples</p>
 </dd></dl>
 
 <span class="target" id="module-NNA_Challenge.src.tools.brute"></span><dl class="class">
@@ -355,6 +333,39 @@ run times if method=’np’ (by default). Pure Python option is available
 if method=’py’.</p>
 </dd></dl>
 
+</dd></dl>
+
+<span class="target" id="module-NNA_Challenge.src.tools.cython.__init__"></span><p>### Cython</p>
+<p>handles cython file importation in the case where Cython fails to compile. 
+_calculate.pyx and calculate.py are functionally the same, though syntax may 
+differ due to optimizations.</p>
+<span class="target" id="module-NNA_Challenge.src.tools.cython.calculate"></span><dl class="function">
+<dt id="NNA_Challenge.src.tools.cython.calculate.calculate">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>determine which points in flat tree are within radius, append results
+which pass check to list and return list when done</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="NNA_Challenge.src.tools.cython.calculate.get_axis">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">get_axis</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">n_dim</em>, <em class="sig-param">depth</em>, <em class="sig-param">method</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.get_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>picks splitting axis as the axis with the highest variance. This can be
+changed to iterate through dimensions sequentially through 
+kwargs[‘axis’] = ‘uniform’</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="NNA_Challenge.src.tools.cython.calculate.sq_dist">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">sq_dist</code><span class="sig-paren">(</span><em class="sig-param">p0</em>, <em class="sig-param">p1</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.sq_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the square distance between two n_dim points as sum of 
+squares</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="NNA_Challenge.src.tools.cython.calculate.strip_tree">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.strip_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes tree, which is a nested dictionary, 
+and flattens the data structure into a list of (label, point) tuples</p>
 </dd></dl>
 
 </div>

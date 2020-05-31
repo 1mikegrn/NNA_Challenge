@@ -37,6 +37,12 @@ NNA_Challenge
 .. automodule:: NNA_Challenge.src.tools.brute
    :members:
 
+.. automodule:: NNA_Challenge.src.tools.cython.__init__
+   :members:
+
+.. automodule:: NNA_Challenge.src.tools.cython.calculate
+   :members:
+
 .. include:: /examples.rst
 
 .. include:: /about.rst

@@ -30,3 +30,6 @@ t3 = time.time()
 
 NNA_Challenge.src.tools.output.output(tree, **kwargs)
 NNA_Challenge.src.tools.output.output(brute, **kwargs)
+
+print(t2-t1)
+print(t3-t2)
