@@ -52,8 +52,8 @@ t3 = time.time()
 # t5 = time.time()
 
 
-# NNA_Challenge.src.tools.output.output(tree, **kwargs)
-# NNA_Challenge.src.tools.output.output(brute, **kwargs)
+NNA_Challenge.src.tools.output.output(tree, **kwargs)
+NNA_Challenge.src.tools.output.output(brute, **kwargs)
 
 print("myKDTree "+str(t2-t1))
 print("myNpBrute: "+str(t3-t2))
