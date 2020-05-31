@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from Cython.Build import cythonize
 from os import path
 
 here = path.abspath(path.dirname(__file__))
@@ -24,11 +25,9 @@ setup(
     ],
 
     packages=find_packages(),
+    include_package_data=True,
 
-    package_data={
-    },
-
-    include_package_data=False,
+    ext_modules=cythonize("**/*.pyx"),
 
     python_requires='>=3.6',
 
