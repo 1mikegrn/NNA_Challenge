@@ -13,7 +13,7 @@ class ParseInput():
         self.n_pts = len(lines)
         self.constraints = [parentheses_parse(line) for line in lines]
         self.n_dim = len(string_fmt(self.constraints[0][1]))
-          
+
     def get_npts(self):
         '''returns number of points in input file'''
         return self.n_pts

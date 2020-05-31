@@ -1,23 +1,21 @@
 import numpy as np
 
-cpdef calculate(tree, point, radius):
+cpdef calculate(flat_tree, point, radius):
     '''determine which points in flat tree are within radius, append results
     which pass check to list and return list when done'''
 
-    flat_tree = strip_tree(tree)
-
-    res = []
-
     cdef int n = len(flat_tree)
     cdef int i
+
+    res = np.empty(n, dtype=object)
 
     for i in range(n):
         item = flat_tree[i]
         d = sq_dist(point[1], item[1])
         if (d <= radius**2) and (d > 0):
-            res.append(item[0])
+            res[i] = item[0]
 
-    return res
+    return res[res != None]
 
 
 cpdef sq_dist(p0, p1):
@@ -25,23 +23,6 @@ cpdef sq_dist(p0, p1):
     squares'''
     return sum([(x[0]-x[1])**2 for x in zip(p0, p1)])
 
-
-def strip_tree(tree):
-    '''takes tree, which is a nested dictionary, 
-    and flattens the data structure into a list of (label, point) tuples'''
-    
-    # leafy tree always ends in list, so return said list when encountered
-    if isinstance(tree, list) is True:
-        return tree
-
-    # recursively traverse tree grabbing all leaves 
-    # and appending them to results list
-    if isinstance(tree, dict) is True:
-        res = []
-        for key in tree.keys():
-            if key != 'H':
-                res += strip_tree(tree[key])
-        return res
 
 cpdef get_axis(points, n_dim, depth, method):
     '''picks splitting axis as the axis with the highest variance. This can be

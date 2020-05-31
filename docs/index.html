@@ -311,13 +311,7 @@ are generated purely as a function of the splitting axis.</p>
 <dl class="method">
 <dt id="NNA_Challenge.src.tools.kdtree.LeafyKDTree.build_tree">
 <code class="sig-name descname">build_tree</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.LeafyKDTree.build_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>recursively build tree from data points. Returns nested dictionary</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="NNA_Challenge.src.tools.kdtree.LeafyKDTree.print_tree">
-<code class="sig-name descname">print_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.LeafyKDTree.print_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>pretty print tree</p>
+<dd><p>recursively build tree from data points. Returns nested Nodes</p>
 </dd></dl>
 
 <dl class="method">
@@ -328,6 +322,12 @@ are generated purely as a function of the splitting axis.</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="NNA_Challenge.src.tools.kdtree.Node">
+<em class="property">class </em><code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">left=None</em>, <em class="sig-param">right=None</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Node class for LeafyKDTree. Repr returns the axis and splitting value.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="NNA_Challenge.src.tools.kdtree.find_points">
 <code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">find_points</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em>, <em class="sig-param">depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.find_points" title="Permalink to this definition">¶</a></dt>
@@ -335,6 +335,13 @@ are generated purely as a function of the splitting axis.</p>
 bounds around a point for a given axis are contained by a subtree, use that
 subtree. If tree bisects radial points, flatten remainder of tree and 
 analyze via brute force</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="NNA_Challenge.src.tools.kdtree.strip_tree">
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.kdtree.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.kdtree.strip_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes tree and flattens the data structure into a list of (label, point) 
+tuples</p>
 </dd></dl>
 
 <span class="target" id="module-NNA_Challenge.src.tools.brute"></span><dl class="class">
@@ -359,7 +366,7 @@ differ due to optimizations.</p>
 </div>
 <span class="target" id="module-NNA_Challenge.src.tools.cython.calculate"></span><dl class="function">
 <dt id="NNA_Challenge.src.tools.cython.calculate.calculate">
-<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.calculate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param">flat_tree</em>, <em class="sig-param">point</em>, <em class="sig-param">radius</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p>determine which points in flat tree are within radius, append results
 which pass check to list and return list when done</p>
 </dd></dl>
@@ -377,13 +384,6 @@ method = ‘uniform’</p>
 <code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">sq_dist</code><span class="sig-paren">(</span><em class="sig-param">p0</em>, <em class="sig-param">p1</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.sq_dist" title="Permalink to this definition">¶</a></dt>
 <dd><p>calculate the square distance between two n_dim points as sum of 
 squares</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="NNA_Challenge.src.tools.cython.calculate.strip_tree">
-<code class="sig-prename descclassname">NNA_Challenge.src.tools.cython.calculate.</code><code class="sig-name descname">strip_tree</code><span class="sig-paren">(</span><em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#NNA_Challenge.src.tools.cython.calculate.strip_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>takes tree, which is a nested dictionary, 
-and flattens the data structure into a list of (label, point) tuples</p>
 </dd></dl>
 
 </div>
