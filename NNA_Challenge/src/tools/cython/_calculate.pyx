@@ -15,7 +15,7 @@ cpdef calculate(flat_tree, point, radius):
         if (d <= radius**2) and (d > 0):
             res[i] = item[0]
 
-    return res[res != None]
+    return list(res[res != None])
 
 
 cpdef sq_dist(p0, p1):
