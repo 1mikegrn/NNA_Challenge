@@ -12,7 +12,7 @@ def calculate(flat_tree, point, radius):
         d = sq_dist(point[1], item[1])
         if (d <= radius**2) and (d > 0):
             res[i] = item[0]
-    return res
+    return res[res!=None]
 
 
 def sq_dist(p0, p1):

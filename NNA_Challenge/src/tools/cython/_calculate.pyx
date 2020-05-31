@@ -1,22 +1,21 @@
 import numpy as np
 
-
 cpdef calculate(flat_tree, point, radius):
     '''determine which points in flat tree are within radius, append results
     which pass check to list and return list when done'''
 
-    res = []
-
     cdef int n = len(flat_tree)
     cdef int i
+
+    res = np.empty(n, dtype=object)
 
     for i in range(n):
         item = flat_tree[i]
         d = sq_dist(point[1], item[1])
         if (d <= radius**2) and (d > 0):
-            res.append(item[0])
+            res[i] = item[0]
 
-    return res
+    return res[res != None]
 
 
 cpdef sq_dist(p0, p1):
