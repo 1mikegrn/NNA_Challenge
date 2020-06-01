@@ -27,7 +27,8 @@ setup(
     packages=find_packages(),
     include_package_data=True,
 
-    ext_modules=cythonize("**/*.pyx"),
+    # remove cythonize until compiler issue is resolved
+    # ext_modules=cythonize("**/*.pyx"),
 
     python_requires='>=3.6',
 
