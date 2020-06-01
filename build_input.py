@@ -29,4 +29,4 @@ def build(length, n_dim):
         )
 
 if __name__ == "__main__":
-    build(1000, 3)
+    build(10000, 3)

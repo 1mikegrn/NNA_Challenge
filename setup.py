@@ -33,7 +33,8 @@ setup(
 
     install_requires=[
         'numpy',
-        'pandas'
+        'pandas',
+        'cython'
     ],
 
     entry_points={
